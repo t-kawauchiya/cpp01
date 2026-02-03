@@ -1,7 +1,7 @@
 NAME = moar_brainz
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic -Iinclude
 LDFLAGS =
 
 SANFLAGS = -g -fsanitize=address -fsanitize=leak -fno-omit-frame-pointer

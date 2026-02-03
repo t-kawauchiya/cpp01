@@ -7,7 +7,7 @@ ex02/hi_this_is_brain
 ex03/unnecessary_violence
 ex04/sed_is_for_losers
 ex05/harl_2_0
-ex06/harl_2_0
+ex06/harl_filter
 *.replace
 compile_commands.json
 .cache
