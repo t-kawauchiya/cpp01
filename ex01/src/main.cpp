@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 13:55:06 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/11 13:58:18 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/03 15:23:35 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@
 int main()
 {
   Zombie* horde;
+  int num;
+  num = 10;
 
-  horde = zombieHorde(10, "zoncchi");
-  for (int i = 0; i < 10; i++)
+  std::cout << "<zombieHorde() has called.>\n";
+  horde = zombieHorde(num, "zoncchi");
+  for (int i = 0; i < num; i++)
   {
-    std::cout << "horde[i].announce()\n";
+    std::cout << "horde[" << i << "].announce()\n";
     horde[i].announce();
   }
   delete[] horde;
