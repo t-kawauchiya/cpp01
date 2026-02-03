@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 14:46:19 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/11 15:22:03 by takawauc         ###   ########.fr       */
+/*   Created: 2025/12/11 14:39:55 by takawauc          #+#    #+#             */
+/*   Updated: 2026/02/03 16:14:52 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef _HUMAN_B_H_
+#define _HUMAN_B_H_
 
-#include <iostream>
+#include "Weapon.hpp"
+
 #include <string>
 
-HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon) {}
-
-HumanA::~HumanA(void) {}
-
-void HumanA::setName(std::string name)
+class HumanB
 {
-  this->_name = name;
-}
+public:
+  HumanB(void);
+  HumanB(const std::string name);
+  ~HumanB(void);
+  void setName(const std::string name);
+  void setWeapon(Weapon& weapon);
+  std::string getName(void) const;
+  Weapon& getWeapon(void) const;
+  void attack(void);
 
-std::string HumanA::getName(void)
-{
-  return this->_name;
-}
+private:
+  std::string _name;
+  Weapon* _weapon;
+};
 
-void HumanA::attack(void)
-{
-  std::cout << this->_name << " attacks with their " << this->_weapon.getType() << "\n";
-}
+#endif /* _HUMAN_B_H_ */

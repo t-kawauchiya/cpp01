@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:40:15 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/11 15:11:16 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/03 16:15:41 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ class Weapon
 {
 public:
   Weapon(void);
-  Weapon(std::string type);
+  Weapon(const std::string type);
   ~Weapon(void);
-  void setType(std::string type);
-  std::string getType(void);
+  void setType(const std::string type);
+  std::string getType(void) const;
 
 private:
   std::string _type;

@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 14:39:55 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/11 15:22:37 by takawauc         ###   ########.fr       */
+/*   Created: 2025/12/11 14:54:41 by takawauc          #+#    #+#             */
+/*   Updated: 2026/02/03 16:12:18 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef _HUMAN_A_H_
-#define _HUMAN_A_H_
 
 #include "Weapon.hpp"
 
 #include <string>
 
-class HumanA
+Weapon::Weapon(void) : _type("no weapon") {}
+Weapon::Weapon(std::string type) : _type(type) {}
+Weapon::~Weapon(void) {}
+
+void Weapon::setType(std::string type)
 {
-public:
-  HumanA(std::string name, Weapon& weapon);
-  ~HumanA(void);
-  void setName(std::string name);
-  void setWeapon(Weapon& weapon);
-  std::string getName(void);
-  Weapon& getWeapon(void);
-  void attack(void);
+  this->_type = type;
+}
 
-private:
-  std::string _name;
-  Weapon& _weapon;
-};
-
-#endif /* _HUMAN_A_H_ */
+std::string Weapon::getType(void) const
+{
+  return this->_type;
+}
