@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 12:21:33 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/03 18:12:55 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:14:42 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 
 Zombie::Zombie(void) {}
+
 Zombie::~Zombie(void)
 {
   std::cout << "a Zombie was destructed. <name: " << this->name << "> \n";

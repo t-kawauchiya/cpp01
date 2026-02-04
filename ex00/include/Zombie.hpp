@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 16:57:27 by takawauc          #+#    #+#             */
-/*   Updated: 2025/12/11 11:51:40 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:12:45 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Zombie
 public:
   Zombie(void);
   ~Zombie(void);
+
   void setName(std::string name);
   std::string getName(void);
 

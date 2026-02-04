@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:07:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 20:07:13 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:41:30 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,17 @@ Harl::~Harl(void) {}
 
 void Harl::complain(std::string level)
 {
-  int index;
-  void (Harl::* funcp[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
-  index = -1;
+  void (Harl::*funcp)(void) = NULL;
   if (level.compare("DEBUG") == 0)
-    index = 0;
-  if (level.compare("INFO") == 0)
-    index = 1;
-  if (level.compare("WARNING") == 0)
-    index = 2;
-  if (level.compare("ERROR") == 0)
-    index = 3;
-  if (index != -1)
-    (this->*funcp[index])();
+    funcp = &Harl::debug;
+  else if (level.compare("INFO") == 0)
+    funcp = &Harl::info;
+  else if (level.compare("WARNING") == 0)
+    funcp = &Harl::warning;
+  else if (level.compare("ERROR") == 0)
+    funcp = &Harl::error;
+  if (funcp)
+    (this->*funcp)();
 }
 
 void Harl::debug(void)
