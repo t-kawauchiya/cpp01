@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:39:55 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/03 16:14:52 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/06 12:17:13 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@
 class HumanB
 {
 public:
-  HumanB(void);
   HumanB(const std::string name);
   ~HumanB(void);
+
   void setName(const std::string name);
   void setWeapon(Weapon& weapon);
   std::string getName(void) const;
   Weapon& getWeapon(void) const;
+
   void attack(void);
 
 private:

@@ -26,7 +26,7 @@ debug: LDFLAGS += $(SANFLAGS)
 debug: fclean all
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
