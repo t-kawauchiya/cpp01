@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:07:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/04 20:41:30 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/06 15:32:51 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,35 @@ Harl::~Harl(void) {}
 
 void Harl::complain(std::string level)
 {
-  void (Harl::*funcp)(void) = NULL;
-  if (level.compare("DEBUG") == 0)
-    funcp = &Harl::debug;
-  else if (level.compare("INFO") == 0)
-    funcp = &Harl::info;
-  else if (level.compare("WARNING") == 0)
-    funcp = &Harl::warning;
-  else if (level.compare("ERROR") == 0)
-    funcp = &Harl::error;
-  if (funcp)
-    (this->*funcp)();
+  switch (toEnum(level))
+  {
+  case Harl::DEBUG:
+    Harl::debug();
+    break;
+  case Harl::INFO:
+    Harl::info();
+    break;
+  case Harl::WARNING:
+    Harl::warning();
+    break;
+  case Harl::ERROR:
+    Harl::error();
+    break;
+  default:
+    break;
+  }
+  return;
+}
+
+Harl::Level Harl::toEnum(std::string level)
+{
+  std::string table[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+  for (int i = 0; i < 4; i++)
+  {
+    if (table[i].compare(level) == 0)
+      return (Harl::Level)i;
+  }
+  return Harl::INVALID;
 }
 
 void Harl::debug(void)

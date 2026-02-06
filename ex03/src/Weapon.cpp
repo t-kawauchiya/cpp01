@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:54:41 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/03 16:12:18 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/06 15:03:58 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void Weapon::setType(std::string type)
   this->_type = type;
 }
 
-std::string Weapon::getType(void) const
+const std::string& Weapon::getType(void) const
 {
   return this->_type;
 }
