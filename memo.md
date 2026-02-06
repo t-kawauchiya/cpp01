@@ -1,6 +1,0 @@
-- ex00,ex01
-  - クラスの生成
-  - Cと同じくscopeの広さで変数の確保方法を変える
-  - 関数の中でstackにinstanceを用意したり、heapに持ったり。
-- ex01
-  - referenceってわかる？
