@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:07:39 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/06 15:34:58 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/06 18:02:53 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ Harl::~Harl(void) {}
 
 void Harl::complain(std::string level)
 {
-  switch (toEnum(level))
+  Harl::Level elevel = toEnum(level);
+  if (elevel < _minLevel)
+    return;
+  switch (elevel)
   {
   case Harl::DEBUG:
     Harl::debug();
