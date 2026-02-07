@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:46:19 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/06 12:11:07 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/07 15:38:31 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ void HumanA::setWeapon(const Weapon& weapon)
   this->_weapon = weapon;
 }
 
-std::string HumanA::getName(void) const
+const std::string& HumanA::getName(void) const
 {
   return this->_name;
 }
 
-Weapon& HumanA::getWeapon(void) const
+const Weapon& HumanA::getWeapon(void) const
 {
   return this->_weapon;
 }

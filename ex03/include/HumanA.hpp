@@ -6,7 +6,7 @@
 /*   By: takawauc <takawauc@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:39:55 by takawauc          #+#    #+#             */
-/*   Updated: 2026/02/06 12:07:40 by takawauc         ###   ########.fr       */
+/*   Updated: 2026/02/07 15:36:36 by takawauc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ public:
 
   void setName(const std::string name);
   void setWeapon(const Weapon& weapon);
-  std::string getName(void) const;
-  Weapon& getWeapon(void) const;
+  const std::string& getName(void) const;
+  const Weapon& getWeapon(void) const;
 
   void attack(void) const;
 
